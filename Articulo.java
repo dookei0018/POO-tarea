@@ -24,7 +24,7 @@ public class Articulo{
 		}
 
 		public void CalcularIva(double precio){
-			double iva = precio*(.15);
+			double iva = precio*(.16);
 			precio = precio + iva;
 		}
 }
