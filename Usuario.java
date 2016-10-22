@@ -1,43 +1,24 @@
-public class Usuario{
-  private String nombre;
-  private String email;
-  private String contrasena;
-  private CarritoDeCompras [5] carcompras;
+public class Usuario
+{
+	private String nombre;
+	private String email;
+	private String password;
+	private CarritoDeCompras carro;
 
-	public Usuario(String nombre, String email, String contrasenia,CarritoDeCompras[] carcompras) {
+	public Usuario(String nombre, String email, String password, CarritoDeCompras carro)
+	{
 		this.nombre = nombre;
 		this.email = email;
-		this.contrasena = contrasena;
+		this.password = password;
+		this.carro = carro;
 	}
 
-	public String getNombre() {
-		return nombre;
-  }
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getContrasena() {
-		return contrasena;
-	}
-
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-  }
-  public  void setCarritoDeCompras(CarritoDeCompras[] carcompras){
-  this.carcompras=carcompras;
-  }
-  public CarritoDeCompras[] getcarcompras(){
-  return carcompras;
-  }
-
+	public String getNombre(){ return nombre; }
+	public void setNombre(String nombre){ this.nombre = nombre; }
+	public String getEmail(){ return email; }
+	public void setEmail(String email){ this.email = email; }
+	public String getPassword(){ return password; }
+	public void setPassword(String password){ this.password = password; }
+	public CarritoDeCompras getCarritoDeCompras(){ return carro; }
+	public void setCarritoDeCompras(CarritoDeCompras carro){ this.carro = carro; }
 }

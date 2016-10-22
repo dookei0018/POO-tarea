@@ -9,10 +9,10 @@ public class Main
 		String nombre = in.nextLine();
 		System.out.print("Correo electronico:\t");
 		String email = in.nextLine();
-		System.out.print("ContraseÃ±a:\t\t");
-		String contrasena = in.nextLine();
+		System.out.print("Contraseña:\t\t");
+		String password = in.nextLine();
 		CarritoDeCompras carrito = new CarritoDeCompras();
-		Usuario usuario = new Usuario(nombre, email, contrasena, carrito);
+		Usuario usuario = new Usuario(nombre, email, password, carrito);
 		System.out.println("\n\n");
 		for(int i = 0; i < 5; i++)
 		{
@@ -26,3 +26,5 @@ public class Main
 		}
 		System.out.println("\n\n");
 		carrito.finalizar();
+	}
+}
