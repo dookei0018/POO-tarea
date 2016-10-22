@@ -31,13 +31,13 @@ public class CarritoDeCompras
 		double total = 0;
 		for(int i = 0; i < 5; i++)
 		{
-			total += articulos[i].getPrecio();
+			total += articulos[i].precioConIVA();
 		}
 		return total;
 	}
 
-	public void finalizar()
+	public double finalizar()
 	{
-		System.out.println("Gracias por su compra!!! Total: " + calcPT());
+		return calcPT();
 	}
 }
