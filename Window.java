@@ -7,7 +7,7 @@ public class Window extends JFrame
 	private int width = 640;
 	private int height = 480;
 	private int artNoRegistrados = 5;
-	private CarritoDeCompras carrito;
+	private Usuario user;
 	private JLabel welcome, tallaL, descripcionL, precioL, total;
 	private JTextField tallaTF, descripcionTF, precioTF;
 	private JButton send;
@@ -24,8 +24,8 @@ public class Window extends JFrame
 
 	private void init()
 	{
-		carrito = new CarritoDeCompras();
-		welcome = new JLabel("Bienvenido, por favor registra 5 productos");
+		user = new Usuario("Usuario", "email@example.com", "password", new CarritoDeCompras());
+		welcome = new JLabel("Registra 5 ropas");
 		total = new JLabel();
 		tallaL= new JLabel("Talla: ");
 		tallaTF = new JTextField(10);
@@ -54,13 +54,13 @@ public class Window extends JFrame
 			if (!tallaTF.getText().equals("") && !descripcionTF.getText().equals("") && !precioTF.getText().equals(""))
 			{
 				artNoRegistrados--;
-				carrito.agregar(new Ropa(tallaTF.getText(), 
+				user.getCarritoDeCompras().agregar(new Ropa(tallaTF.getText(), 
 							descripcionTF.getText(),
 							Double.parseDouble(precioTF.getText())));
 				tallaTF.setText("");
 				descripcionTF.setText("");
 				precioTF.setText("");
-				welcome.setText("Registra " + artNoRegistrados + " articulo(s)");
+				welcome.setText("Registra " + artNoRegistrados + " ropajav(s)");
 			}
 			else
 			{
@@ -76,7 +76,7 @@ public class Window extends JFrame
 				remove(precioL);
 				remove(precioTF);
 				remove(send);
-				total.setText("Precio total: $" + carrito.finalizar());
+				total.setText("Precio total: $" + user.getCarritoDeCompras().finalizar());
 			}
 		}	
 	}
